@@ -63,6 +63,12 @@
 		</div>
 
 	</div>
+
+	<section class="audio">
+		<audio class="audioMp3" src="audioFile/LoveStory.mp3" loop preload="none"/>
+	</section>
+
+
 	<script type="text/javascript">
 		var offsetX = $("#loveHeart").width() / 2;
 		var offsetY = $("#loveHeart").height() / 2 - 55;
@@ -95,6 +101,34 @@
 			adjustCodePosition();
 			$("#code").typewriter();
 		}
+
+		(function (desW) {
+			var winW = document.documentElement.clientWidth;
+			document.documentElement.style.fontSize = winW / desW * 100 + "px";
+		})(640);
+
+		~function () {
+			var audioBox = document.querySelector(".audio"),
+					myAudio = audioBox.getElementsByTagName("audio")[0];
+			window.setTimeout(function () {
+				myAudio.play();
+				myAudio.addEventListener("canplay", function () {
+					audioBox.style.display = "block";
+					audioBox.className += " audioMove";
+				}, false);
+			}, 1000);
+			audioBox.addEventListener("click", function () {
+				if (myAudio.paused) {
+					myAudio.play();
+					audioBox.className = "audio audioMove";
+					return;
+				}
+				myAudio.pause();
+				audioBox.className = "audio";
+			}, false);
+		}();
+
+
 	</script>
 </body>
 </html>
