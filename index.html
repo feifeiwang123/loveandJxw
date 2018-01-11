@@ -67,13 +67,29 @@
 	<section class="audio">
 		<audio class="audioMp3" src="audioFile/LoveStory.mp3" loop preload="none"/>
 	</section>
-
+	<!--此时此刻对于2017年7月22日0时0分0秒过去了<span id=nowtime></span>-->
+	<!--<script>-->
+		<!--function getTheTime(){-->
+			<!--var t=new Date().getTime() - new Date(2017,6,22).getTime() ;-->
+			<!--var d=Math.floor(t/1000/60/60/24);-->
+			<!--t-=d*1000*60*60*24;-->
+			<!--var h=Math.floor(t/1000/60/60);-->
+			<!--t-=h*1000*60*60;-->
+			<!--var m=Math.floor(t/1000/60);-->
+			<!--t-=m*1000*60;-->
+			<!--var s=Math.floor(t/1000);-->
+			<!--return d+"天"+h+"小时"+m+"分钟"+s+"秒";-->
+		<!--}-->
+		<!--window.onload=function(){-->
+			<!--setInterval("nowtime.innerHTML=getTheTime();",1000);-->
+		<!--}-->
+	<!--</script>-->
 
 	<script type="text/javascript">
 		var offsetX = $("#loveHeart").width() / 2;
 		var offsetY = $("#loveHeart").height() / 2 - 55;
 		var together = new Date();
-		together.setFullYear(2017, 7, 22);
+		together.setFullYear(2017, 6, 22);//少了一个月 所以是  2017/6/22
 		together.setHours(8);
 		together.setMinutes(0);
 		together.setSeconds(0);
